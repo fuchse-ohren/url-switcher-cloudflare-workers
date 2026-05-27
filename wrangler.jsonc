@@ -1,0 +1,30 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "shorten",
+	"main": "src/index.ts",
+	"assets": {
+		"directory": "./src/ui",
+	},
+	"compatibility_date": "2026-04-17",
+	"observability": {
+		"enabled": true,
+	},
+	"upload_source_maps": true,
+	"compatibility_flags": ["nodejs_compat"],
+	"ratelimits": [
+		{
+			"name": "DEFAULT",
+			"namespace_id": "1001",
+			"simple": {
+				"limit": 60,
+				"period": 60,
+			},
+		},
+	],
+	"kv_namespaces": [{ "binding": "KV" }],
+	//"vars": {  "CORS_DOMAIN": "<SET_YOUR_DOMAIN>" }
+}
