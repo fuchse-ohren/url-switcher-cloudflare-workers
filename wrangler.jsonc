@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "url-switcher-cloudflare-workers",
+	"name": "redirect-computer-science-trends",
 	"main": "src/index.ts",
 	"assets": {
 		"directory": "./src/ui",
