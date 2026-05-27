@@ -14,69 +14,34 @@
         <script src="./qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="></script>
 	</HEAD>
 	<BODY>
-
-		<!-- コンテンツラッパー -->
 		<div class="contentWrapper">
-
-			<div class="dads-heading" data-size="36">
-				<h2 class="dads-heading__heading">
-					URL短縮
-				</h2>
-			</div>
+			<div class="dads-heading" data-size="36"><h2 class="dads-heading__heading">URL短縮</h2></div>
 
 			<div class="dads-form-control-label" data-size="md" style="margin-top:2em;">
-				<label class="dads-form-control-label__label" for="with-label-input">
-					URL
-					<span class="dads-form-control-label__requirement" data-required="true">※必須</span>
-				</label>
-				<p id="with-label-support-text" class="dads-form-control-label__support-text">短縮したいURLを入力してください</p>
-				<div>
-					<span class="dads-textarea">
-					<input name="qr_input" id="with-label-input" class="dads-textarea__textarea" aria-invalid="false" aria-describedby="with-label-error-text with-label-support-text" style="width:100%;" type="text">
-					<span id="input_required_label" class="dads-input-text__error-text" style="display:none;">＊この項目は入力必須です</span>
-					<span id="input_error_label" class="dads-input-text__error-text" style="display:none;"></span>
-					</span>
-				</div>
+				<label class="dads-form-control-label__label" for="browser-url-input">ブラウザ用URL <span class="dads-form-control-label__requirement" data-required="true">※必須</span></label>
+				<p class="dads-form-control-label__support-text">Firefox / Chrome などの遷移先</p>
+				<div><span class="dads-textarea"><input id="browser-url-input" class="dads-textarea__textarea" style="width:100%;" type="text"><span id="browser_input_required_label" class="dads-input-text__error-text" style="display:none;">＊この項目は入力必須です</span><span id="browser_input_error_label" class="dads-input-text__error-text" style="display:none;"></span></span></div>
 			</div>
 
-
+			<div class="dads-form-control-label" data-size="md" style="margin-top:1em;">
+				<label class="dads-form-control-label__label" for="other-url-input">その他クライアント用URL <span class="dads-form-control-label__requirement" data-required="true">※必須</span></label>
+				<p class="dads-form-control-label__support-text">curl などの遷移先</p>
+				<div><span class="dads-textarea"><input id="other-url-input" class="dads-textarea__textarea" style="width:100%;" type="text"><span id="other_input_required_label" class="dads-input-text__error-text" style="display:none;">＊この項目は入力必須です</span><span id="other_input_error_label" class="dads-input-text__error-text" style="display:none;"></span></span></div>
+			</div>
 
 			<button class="dads-button" id="gen" data-size="lg" data-type="solid-fill" style="width:100%; margin-top:1em;">URL短縮</button>
 
-			<!-- 出力欄 -->
-			<div style="margin-top:4em;">
-				<ul id="output-list" class="dads-card-example-2-list">
-
-					<li id="mock-card" style="display: none;">
-						<div class="dads-card-example-2" style="display:block;">
-							<div class="dads-card-example-2__main" style="margin-top: 0.5em; margin-bottom: 0.5em;">
+			<div style="margin-top:4em;"><ul id="output-list" class="dads-card-example-2-list">
+				<li id="mock-card" style="display: none;"><div class="dads-card-example-2" style="display:block;"><div class="dads-card-example-2__main" style="margin-top: 0.5em; margin-bottom: 0.5em;">
                                 <div class="qrcode" style="margin:auto;"></div>
                                 <table>
-                                <tr>
-                                <td width="64px">元URL</td>
-                                <td colspan="2"><input name="input_text" class="dads-input-text__input" type="text" data-size="sm" readonly style="width:100%;" value="mock"></td>
-                                </tr>
-                                <tr>
-                                <td  width="64px">短縮URL</td>
-                                <td>
-                                <input name="output_text" class="dads-input-text__input" type="text" data-size="sm" readonly style="width:100%;" value="mock">
-                                </td>
-                                <td width="64px">
-                                <button class="dads-button copybutton" data-size="sm" data-type="outline">コピー</button>
-                                </td>
-                                </tr>
+                                <tr><td width="130px">ブラウザ用URL</td><td colspan="2"><input name="browser_text" class="dads-input-text__input" type="text" readonly style="width:100%;"></td></tr>
+                                <tr><td width="130px">その他用URL</td><td colspan="2"><input name="other_text" class="dads-input-text__input" type="text" readonly style="width:100%;"></td></tr>
+                                <tr><td width="130px">短縮URL</td><td><input name="output_text" class="dads-input-text__input" type="text" readonly style="width:100%;"></td><td width="64px"><button class="dads-button copybutton" data-size="sm" data-type="outline">コピー</button></td></tr>
                                 </table>
-
-
-							</div>
-						</div>
-					</li>
-
-				</ul>
-			</div>
-
+				</div></div></li>
+			</ul></div>
 		</div>
-
 	</BODY>
-    <script src="index.js" integrity="sha256-9sHsCPWdeK7T1OvPwSxsNp51VUehG3l9q1OVTwyVqRA="></script>
+    <script src="index.js"></script>
 </html>
